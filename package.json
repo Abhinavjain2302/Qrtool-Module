@@ -17,5 +17,8 @@
     "sql": "^0.78.0",
     "express-validator": "^4.3.0",
     "body-parser": "~1.17.1"
+  },
+    "engines": {
+    "node": "8.11.2"
   }
 }
