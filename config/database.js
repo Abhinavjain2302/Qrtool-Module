@@ -12,18 +12,28 @@ var mysql= require('mysql');
 				      
 //                  }
 // };
+
+module.exports={
+  
+  'connection': {    host:"sql12.freemysqlhosting.net",
+                   	user:"sql12263013",
+        			 password:"MjXY2YCvse",
+      				database:"sql12263013"
+            }
+
+};
 console.log("database");
 
 
 //For local host
 
 
-module.exports={
+// module.exports={
   
-  'connection': {    host:"localhost",
-                   	user:"root",
-        			 password:"abhi",
-      				database:"qrtool"
-            }
+//   'connection': {    host:"localhost",
+//                    	user:"root",
+//         			 password:"abhi",
+//       				database:"qrtool"
+//             }
 
-};
+// };
