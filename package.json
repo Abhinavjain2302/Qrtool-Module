@@ -6,19 +6,21 @@
     "start": "node ./bin/www"
   },
   "dependencies": {
+    "bcrypt": "^1.0.3",
+    "body-parser": "~1.17.1",
     "cookie-parser": "~1.4.3",
     "debug": "~2.6.9",
     "express": "~4.16.0",
-    "http-errors": "~1.6.2",
-    "jade": "~1.11.0",
-    "morgan": "~1.9.0",
-    "bcrypt": "^1.0.3",
-    "jsonwebtoken": "^8.1.1",
-    "sql": "^0.78.0",
     "express-validator": "^4.3.0",
-    "body-parser": "~1.17.1"
+    "http-errors": "~1.6.2",
+    "install": "^0.12.2",
+    "jade": "~1.11.0",
+    "jsonwebtoken": "^8.1.1",
+    "morgan": "~1.9.0",
+    "sql": "^0.78.0"
   },
-    "engines": {
-    "node": "8.11.2"
+  "engines": {
+    "node": "8.11.3",
+    "npm":  "5.6.0"
   }
 }
