@@ -77,18 +77,29 @@ router.post('/register',function(req,res,next){
    // var contact2=req.body.contact.slice(2-12);
    // console.log(contact2);
 
-  req.checkBody('name','Name cannot be empty').notEmpty();
-  req.checkBody('email','Email cannot be empty').notEmpty();
-  req.checkBody('email', 'Enter a valid email').isEmail();
-  req.checkBody('password','password cannot be empty').notEmpty();
+connection.query("select contact from user",function(err,result,fields){
+  if(err) throw err;
+   else{
+    for(var i=0;i<result.length;i++){
 
- var errors=req.validationErrors();
- console.log(errors);
- if (errors){
+    if(contact==result[i].contact)
+    {
+      console.log("mobile number" +contact + "already exist");
+      return res.json({
+      success:true,
+      msg:'mobile number already exist'
+     });
+    }
 
- 	return handleError(errors,null,res);
- }
- else{
+}
+console.log("mobile number" +contact+ "does not exist");
+
+return res.json({
+    msg:'mobile number does not exist'
+})
+
+  }
+
 
  var newUser= ({
        name:name,
@@ -110,7 +121,7 @@ router.post('/register',function(req,res,next){
       if(err) throw err;
            
 
-           res.json({
+         return res.json({
                     success:true,
                     msg: 'user created'
                 });
@@ -118,7 +129,7 @@ router.post('/register',function(req,res,next){
            });
 
         });
-    }
+})    
 
 });
 
