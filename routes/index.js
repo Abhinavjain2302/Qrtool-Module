@@ -92,9 +92,9 @@ router.post('/register', function (req, res, next) {
       }
       console.log("mobile number" + contact + "does not exist");
 
-      return res.json({
-        msg: 'mobile number does not exist'
-      })
+      //  res.json({
+      //   msg: 'mobile number does not exist'
+      // })
 
     }
 
