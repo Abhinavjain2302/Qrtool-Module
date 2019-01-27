@@ -15,10 +15,10 @@ var mysql= require('mysql');
 
 module.exports={
   
-  'connection': {    host:"sql12.freemysqlhosting.net",
-                   	user:"sql12263013",
-        			 password:"MjXY2YCvse",
-      				database:"sql12263013"
+  'connection': {    host:"remotemysql.com",
+                   	user:"kiUKewSqLj",
+        			 password:"kgl2qKsKO0",
+      				database:"kiUKewSqLj"
             }
 
 };
