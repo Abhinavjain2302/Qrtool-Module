@@ -13,8 +13,12 @@ var connection = mysql.createConnection(dbconfig.connection);
 
 
 /* GET home page. */
-router.get('/', function (req, res, next) {
-  res.render('index', { title: 'Express' });
+router.get('/', isAuthenticated, function(req, res, next){
+    console.log(res.locals);
+    res.json({
+      success:true
+    })
+    
 });
 
 
@@ -236,6 +240,29 @@ router.post('/qrgenerator', function (req, res, next) {
   })
 
 });
+
+
+//this function checks if the user is in session or not
+function isAuthenticated(req, res, next){
+    console.log(req.headers['authorization']);
+    if(req.headers['authorization']){
+        jwt.verify(req.headers['authorization'], secret, function(err, decoded){
+            if(err){
+                console.log(err);
+                return handleError(err, null, res);
+            }
+            res.locals.driverId = decoded.id;
+            console.log("calling next now and " + res.locals.driverId);
+            return next();
+        })
+    }else{
+        res.json({
+            success:false,
+            auth:false,
+            msg:"authentication unsuccessful, please login again"
+        });
+    }
+}
 
 
 
